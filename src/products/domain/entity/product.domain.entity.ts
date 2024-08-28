@@ -4,7 +4,6 @@ export interface PrimitiveProduct {
     id: string;
     amount: number;
     name: string;
-    customerId: string;
 }
 
 export class Product {
@@ -15,11 +14,10 @@ export class Product {
     static create(createProduct: {
         amount: number;
         name: string;
-        customerId: string;
     }): Product {
         return new Product({
             id: uuidv4(),
-            ...createProduct
+            ...createProduct,
         });
     };
 
